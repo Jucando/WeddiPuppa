@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_21_131630) do
+ActiveRecord::Schema.define(version: 2018_05_21_135539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "media", force: :cascade do |t|
+    t.string "type"
+    t.bigint "performance_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["performance_id"], name: "index_media_on_performance_id"
+  end
+
+  create_table "performances", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "price"
+    t.boolean "is_visible"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_performances_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "date"
+    t.string "location"
+    t.bigint "performance_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["performance_id"], name: "index_reservations_on_performance_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +58,17 @@ ActiveRecord::Schema.define(version: 2018_05_21_131630) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "avatar"
+    t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "media", "performances"
+  add_foreign_key "performances", "users"
+  add_foreign_key "reservations", "performances"
+  add_foreign_key "reservations", "users"
 end
