@@ -1,0 +1,8 @@
+<h1>Vivez un moment magique avec WadePuppa</h1>
+<% @performances.each do |performance| %>
+  <%= performance.user.first_name %>
+  <%= performance.title %>
+  <%= performance.description %>
+  <%= performance.price %>
+  <%= performance.is_visible %>
+<% end %>
