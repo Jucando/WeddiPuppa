@@ -1,6 +1,8 @@
 class PerformancesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show, :book]
+
   def index
-    @performances = performance.all
+    @performances = Performance.all
   end
 
   def show
@@ -30,6 +32,10 @@ class PerformancesController < ApplicationController
     @performance.destroy
     # no need for app/views/performances/destroy.html.erb
     redirect_to performances_path
+  end
+
+  def book
+
   end
 
   private
