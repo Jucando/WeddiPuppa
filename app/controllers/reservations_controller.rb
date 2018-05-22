@@ -18,11 +18,13 @@ class ReservationsController < ApplicationController
     @reservation.performance = @performance
     @reservation.user = current_user
     if @reservation.save
-      # redirect_to confirm_performance_reservation
-      raise #It worked!
+      render :confirmation
     else
       render :new
     end
+  end
+
+  def confirmation
   end
 
   def edit
