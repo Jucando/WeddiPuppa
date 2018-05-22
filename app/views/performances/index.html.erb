@@ -1,8 +1,14 @@
 <h1>Vivez un moment magique avec WadePuppa</h1>
-<% @performances.each do |performance| %>
-  <%= performance.user.first_name %>
-  <%= performance.title %>
-  <%= performance.description %>
-  <%= performance.price %>
-  <%= performance.is_visible %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @performances.each do |performance| %>
+      <div class="col-xs-12 col-md-4 card">
+        <div class="card-category">
+          <%= performance.title %>
+        </div>
+        <span id="card-description"> <%= performance.description %> </span>
+        <span id="card-price"> <%= performance.price %> €</span>
+      </div>
+    <% end %>
+  </div>
+</div>
