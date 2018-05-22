@@ -15,5 +15,4 @@
     is_visible: true,
     category: ["Concert", "Danse", "Stand-up", "Painter", "DJ"].sample
   )
-  puts "#{performance.title}. #{performance.description} .#{performance.price} .#{performance.is_visible} .#{performance.category}"
 end

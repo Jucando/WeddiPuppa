@@ -1,5 +1,5 @@
 <div class="container">
-  <%= @performance.title %>
+  <h1> <%= @performance.title %> - <%= @performance.price %> €</h1>
   <%= @performance.description %>
-  <%= @performance.price %> €
+  <%= link_to "Back to performances", performances_path, class: "btn btn-success" %>
 </div>
