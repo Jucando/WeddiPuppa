@@ -11,8 +11,7 @@
 
 <div class="container">
   <div class="row">
-<% last_performances == @performances.last(3) %>
-<% last_performances do |performance| %>
+<% @performances.each do |performance| %>
   <div class="col-xs-12 col-sm-4">
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path performance.photo, height: 300, width: 400, crop: :fill %>');">
       <div class="card-description">
