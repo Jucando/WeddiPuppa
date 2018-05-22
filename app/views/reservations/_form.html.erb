@@ -2,7 +2,13 @@
 <p>Description : <%= @performance.description %></p>
 <p>Price : <%= @performance.price %></p>
 <%= simple_form_for [@performance, @reservation] do |f| %>
-  <%= f.input :date %>
-  <%= f.input :location %>
-  <%= f.submit "Book now!" %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-inputs">
+    <%= f.input :date, label: "Event Date", as: :string, input_html: { class: "datepicker" } %>
+    <%= f.input :location, label: "Event Location", placeholder: 'Example: 16 Villa Gaudelet, Paris', class: 'form-control' %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Book now!" %>
+  </div>
 <% end %>
