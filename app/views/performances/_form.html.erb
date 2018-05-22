@@ -3,13 +3,13 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
+    <%= f.input :title, placeholder: 'Name of your performance', class: 'form-control' %>
     <%= f.input :description %>
     <%= f.input :price %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: [ "Concert", "Danse", "Stand-up", "Painter", "DJ"]%>
   </div>
 
   <div class="form-actions">
-  <%= f.submit class: "btn btn-success"%>
+  <%= f.submit "Add a performance", class: "btn btn-success"%>
   </div>
 <% end %>
