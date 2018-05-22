@@ -2,7 +2,7 @@ class PerformancesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @performances = Performance.all
+    @performances = policy_scope(Performance)
   end
 
   def show
