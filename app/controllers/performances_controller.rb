@@ -10,16 +10,18 @@ class PerformancesController < ApplicationController
   end
 
   def new
-    @performance = Performance.new
+    @performance = current_user.performances.new
+    authorize @performance
   end
 
   def create
-    @performance = Performance.new(performance_params)
-    # if @performance.save
-    #   redirect_to new_performance_reservation_path
-    # else
-    #   render :new
-    # end
+    @performance = current_user.performances.new(performance_params)
+    authorize @performance
+    if @performance.save
+      redirect_to @performance
+    else
+      render :new
+    end
   end
 
   def edit
