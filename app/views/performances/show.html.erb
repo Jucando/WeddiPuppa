@@ -1,5 +1,10 @@
 <div class="container">
-  <%= @performance.title %>
-  <%= @performance.description %>
-  <%= @performance.price %> €
+  <h1> <%= @performance.title %> - <%= @performance.price %> €</h1>
+  <div class="perfromance-details">
+    <%= @performance.description %>
+  </div>
+  <div class="btn-grp text-center">
+    <%= link_to "Back to performances", performances_path, class: "btn btn-info" %>
+    <%= link_to "Book this performance", new_performance_reservation_path(@performance), class: "btn btn-success" %>
+  </div>
 </div>
