@@ -1,0 +1,8 @@
+<h2><%= @performance.title %></h2>
+<p>Description : <%= @performance.description %></p>
+<p>Price : <%= @performance.price %></p>
+<%= simple_form_for [@performance, @reservation] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :location %>
+  <%= f.submit "Book now!" %>
+<% end %>
