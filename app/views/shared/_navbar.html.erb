@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "weddipuppa.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -15,7 +15,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "https://pbs.twimg.com/profile_images/870505114418659329/9akj9LFI_400x400.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
@@ -38,7 +38,7 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to "Performances", performances_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Become a Puppa", new_performance_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Add a performance", new_performance_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
