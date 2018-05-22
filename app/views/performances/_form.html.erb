@@ -4,8 +4,8 @@
 
   <div class="form-inputs">
     <%= f.input :title, placeholder: 'Name of your performance', class: 'form-control' %>
-    <%= f.input :description %>
-    <%= f.input :price %>
+    <%= f.input :description, placeholder: 'Describe your performance, for example: 1h violon concert in Paris area', class: 'form-control' %>
+    <%= f.input :price, label: 'Price (€)', placeholder: 'Example: 200', class: 'form-control' %>
     <%= f.input :category, collection: [ "Concert", "Danse", "Stand-up", "Painter", "DJ"]%>
   </div>
 
