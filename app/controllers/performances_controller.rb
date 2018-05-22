@@ -50,7 +50,7 @@ class PerformancesController < ApplicationController
   def performance_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:performance).permit(:title, :description, :price, :is_visible, :category)
+    params.require(:performance).permit(:title, :description, :price, :is_visible, :category, :photo)
   end
 end
 
