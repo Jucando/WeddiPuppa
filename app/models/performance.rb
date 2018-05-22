@@ -7,4 +7,13 @@ class Performance < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   mount_uploader :photo, PhotoUploader
+  include CloudinaryHelper
+
+  def smart_image_url
+    if photo.url.nil?
+      "http://guitarhippies.com/wp-content/uploads/2017/11/jazz-guitar.jpg"
+    else
+      cl_image_path self.photo, height: 300, width: 400, crop: :fill
+    end
+  end
 end
