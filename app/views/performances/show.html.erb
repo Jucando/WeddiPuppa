@@ -1,10 +1,28 @@
 <div class="container">
-  <h1> <%= @performance.title %> - <%= @performance.price %> €</h1>
-  <div class="perfromance-details">
-    <%= @performance.description %>
+  <div class="row">
+    <div class="col-xs-offset-3 col-xs-6">
+      <div class="adv-card">
+        <div class="adv-card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @performance.smart_image_url %>')">
+        </div>
+
+        <div class="adv-card-right">
+          <div class="adv-card-right-top">
+            <h1><%= @performance.title %></h1>
+            <h2><%= @performance.category %></h2>
+            <p><%= @performance.description %></p>
+          </div>
+          <div class="adv-card-right-bottom">
+            <p class="adv-card-price"><%= @performance.price %> €</p>
+            <%= link_to "BOOK NOW", new_performance_reservation_path(@performance), class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="btn-grp text-center">
-    <%= link_to "Back to performances", performances_path, class: "btn btn-info" %>
-    <%= link_to "Book this performance", new_performance_reservation_path(@performance), class: "btn btn-success" %>
+
+  <div class="row">
+    <div class="btn-grp text-center">
+      <%= link_to "Back to performances", performances_path, class: "btn btn-info" %>
+    </div>
   </div>
 </div>
