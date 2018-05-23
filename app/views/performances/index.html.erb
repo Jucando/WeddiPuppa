@@ -1,12 +1,14 @@
-<h1>Vivez un moment magique avec WeddiPuppa</h1>
 <div class="container">
+  <h1>Vivez un moment magique avec WeddiPuppa</h1>
   <div class="row">
     <% @performances.each do |performance| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url %>')">
-          <h2 class="card-category"><%= performance.title %></h2>
-          <span id="card-price"> <%= performance.price %> €</span>
           <%= link_to "", performance_path(performance), class: "card-link" %>
+        </div>
+        <div class="card-subsection">
+          <h2><%= performance.title %></h2>
+          <span> <%= performance.price %> €</span>
         </div>
       </div>
     <% end %>
