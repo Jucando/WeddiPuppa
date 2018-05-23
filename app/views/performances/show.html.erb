@@ -6,11 +6,12 @@
   </div>
   <div class="btn-grp text-center">
     <%= link_to "Back to performances", performances_path, class: "btn btn-info" %>
-    <%= link_to "Book this performance", new_performance_reservation_path(@performance), class: "btn btn-success" %>
+    <%= link_to "Book this performance", new_performance_reservation_path(@performance), class: "btn btn-medium" %><!--
     <% if policy(Performance).destroy? %>
-      <%= link_to "Edit", edit_performance_path(params[:id]), class: "btn btn-danger" %>
-      <%= link_to "Delete", performances_path(@performance), class: "btn btn-danger" %>
+      <%= link_to "Edit", edit_performance_path(params[:id]), class: "btn btn-medium" %>
+      <%= link_to "Delete", performances_path(@performance), class: "btn btn-medium" %>
     <% end %>
+    -->
   </div>
 </div>
 
