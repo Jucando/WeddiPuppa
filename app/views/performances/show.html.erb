@@ -1,5 +1,6 @@
 <div class="container">
   <h1> <%= @performance.title %> - <%= @performance.price %> €</h1>
+  <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @performance.smart_image_url %>')">
   <div class="perfromance-details">
     <%= @performance.description %>
   </div>
@@ -8,3 +9,5 @@
     <%= link_to "Book this performance", new_performance_reservation_path(@performance), class: "btn btn-success" %>
   </div>
 </div>
+
+
