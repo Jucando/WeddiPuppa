@@ -27,3 +27,18 @@
     background-color: #FFFFFF;
   }
 }
+
+.btn-medium-blue {
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background-color: #2D245C;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #2D245C;
+    background-color: #FFFFFF;
+  }
+}
