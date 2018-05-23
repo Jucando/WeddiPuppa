@@ -6,6 +6,7 @@
         <div class="card">
           <%= link_to "", performance_path(performance), class: "card-link" %>
           <div class="card-upper-section" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url%>')">
+            <p> <%= performance.category %></p>
           </div>
           <div class="card-sub-section">
             <h2><%= performance.title.capitalize %></h2>
