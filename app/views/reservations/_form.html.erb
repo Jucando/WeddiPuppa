@@ -1,14 +1,14 @@
-<h2><%= @performance.title %></h2>
-<p>Description : <%= @performance.description %></p>
-<p>Price : <%= @performance.price %></p>
 <%= simple_form_for [@performance, @reservation] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="form-inputs">
+  <div class="adv-card-right-top">
+    <div class="advanced-card-right-top-title">
+      <h1><%= @performance.title %></h1>
+      <h2> <%= link_to "See details", performance_path(@performance) %> </h2>
+    </div>
     <%= f.input :date, label: "Event Date", as: :string, input_html: { class: "datepicker" } %>
     <%= f.input :location, label: "Event Location", placeholder: 'Example: 16 Villa Gaudelet, Paris', class: 'form-control' %>
   </div>
-  <div class="form-actions">
-    <%= f.submit "Book now!", class: 'btn-medium text-center' %>
+  <div class="adv-card-right-bottom">
+    <p class="adv-card-price"><%= @performance.price %> €</p>
+        <%= f.submit "CONFIRM", class: "btn btn-medium-pink" %>
   </div>
 <% end %>

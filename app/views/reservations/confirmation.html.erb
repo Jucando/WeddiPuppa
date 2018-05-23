@@ -1,9 +1,15 @@
-<h1>Confirmation</h1>
-
-<p>You will receive a confirmation by email when the Poopa validates your booking.</p>
-<h2>Summary : </h2>
-<p><%= @performance.title  %></p>
-<p>Description : <%= @performance.description %> </p>
-<p>Price : <%= @performance.price %></p>
-<p>Event Address : <%= @reservation.location %> </p>
-<p>Event Date : <%= @reservation.date %> </p>
+<div class="container">
+  <div class="class row">
+    <div class="col-xs-offset-3 col-xs-6">
+      <h1 class="text-center">Thank you!</h1>
+      <p class="text-center"><i class="fa fa-check-circle" id="check-circle"></i></p>
+      <p>📩 Check your inbox, you will receive a confirmation with details of your reservation.</p>
+      <h2> <%= @performance.title %></h2>
+      <p><strong>Description :</strong> <%= @performance.description %> </p>
+      <p><strong>Price :</strong> <%= @performance.price %> €</p>
+      <p><strong>Event Address :</strong> <%= @reservation.location %> </p>
+      <p><strong>Event Date :</strong> <%= @reservation.date %> </p>
+      <%= link_to "Back to performances", performances_path %>
+    </div>
+  </div>
+</div>

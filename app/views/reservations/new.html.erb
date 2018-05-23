@@ -1,8 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-offset-3 col-xs-6" style="margin-top: 40px">
-      <h1>Book this performance</h1>
-      <%= render 'form' %>
-    </div>
-  </div>
+<%= render 'shared/book_form' %>
+<div class="btn-grp text-center">
+  <%= link_to "Back to performances", performances_path %>
 </div>

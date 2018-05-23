@@ -1,41 +1,69 @@
+/*---------------------------- MAIN CARD SECTION ----------------------------*/
 .card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  background-image: linear-gradient(125deg, rgba(10,10,10,0.2), rgba(10,10,10,0.7)), url("http://www.cominghometomusic.org/wp-content/uploads/2014/05/houseconcertfoto-2-e1400173646354.jpg");
+  height: 100%;
   color: white;
   position: relative;
-  margin: 10px;
+  margin: 10px 0;
+  box-shadow: 2px 0px 3px rgba(100, 100, 100, 0.4);
+}
+
+.card {
   border-radius: 3px;
 
+  .card-upper-section {
+    border-radius: 3px 3px 0px 0px;
+  }
+
+  .card-sub-section {
+    border-radius: 0px 0px 3px 3px;
+  }
 }
-#card-price {
-  position: absolute;
-  right: 7px;
-  bottom: 7px;
+
+/*---------------------------- UPPER SECTION ----------------------------*/
+
+.card-upper-section {
+  height: 175px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 3px 0;
+
 }
-.card-category {
-  position: absolute;
-  bottom: 7px;
-  left: 7px;
-  font-size: 15px;
-  text-transform: uppercase;
-  margin: 0;
+
+/*---------------------------- SUB-SECTION ----------------------------*/
+
+.card-sub-section {
+  height: 35px;
+  background-color: white;
+  color: black;
+  border-radius: 0 3px;
+  position: relative;
+
+  h2 {
+    font-size: 17px;
+    margin: 0;
+    position: absolute;
+    bottom: 9px;
+    left: 7px;
+    color: #484848;
+    width: 170px;
+  }
+
+  span {
+    position: absolute;
+    right: 5px;
+    bottom: 7px;
+    color: #484848;
+    font-weight: lighter;
+    font-size: 15px;
+  }
+
 }
-#card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
-}
+
+
+
+/*---------------------------- CARD LINK ----------------------------*/
+
 .card-link {
   position: absolute;
   top: 0;
@@ -43,9 +71,11 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
+  background: rgba(200, 200, 200, 1);
   opacity: 0;
-}
-.card-link:hover {
-  opacity: 0.1;
+
+  &:hover {
+    opacity: 0.1;
+  }
+
 }

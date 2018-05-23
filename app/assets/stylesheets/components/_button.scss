@@ -1,14 +1,29 @@
-.btn-medium {
-  color: #FFFFFF;
-  border: 1px solid #999999;
+.btn-medium-white {
+  color: #DF017D;
   padding: 10px 15px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
+  background-color: white;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #DF017D;
+  }
 }
-.btn-medium:hover {
-  opacity: 1;
-  text-decoration: none;
-  color: #999999;
-  background-color:
+
+.btn-medium-pink {
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background-color: #DF017D;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #DF017D;
+    background-color: #FFFFFF;
+  }
 }
