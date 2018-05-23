@@ -1,6 +1,7 @@
 <div class="container">
-  <h1><%= @performance.title %> - <%= @performance.price %> €</h1>
-  <div class="performance-details">
+  <h1> <%= @performance.title %> - <%= @performance.price %> €</h1>
+  <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @performance.smart_image_url %>')">
+  <div class="perfromance-details">
     <%= @performance.description %>
   </div>
   <div class="btn-grp text-center">
@@ -12,3 +13,5 @@
     <% end %>
   </div>
 </div>
+
+

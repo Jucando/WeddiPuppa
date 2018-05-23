@@ -1,13 +1,29 @@
 <div class="banner">
   <div class="home-banner">
-    <h1><span>WeddiPuppa : Your party at home !</span></h1>
-    <p><span>Find best performers for live show in your appartment</span></p>
+    <h1>WeddiPuppa : Your party at home !</h1>
+    <p>Find best performers for live show in your appartment</p>
     <%= link_to "Book a performance", performances_path, class: "btn btn-success" %>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <p>CARD</p>
+
+<div class="container">
+  <div class="row">
+    <h2 class="text-center">Most recent performances</h2>
+<% last_performances = @performances.last(3) %>
+<% last_performances.each do |performance| %>
+  <div class="col-xs-12 col-sm-4">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url %>');">
+      <div class="card-description">
+        <h2><%= performance.title.capitalize %></h2>
+      </div>
+      <%= link_to "", performance_path(performance), class: "card-link" %>
+    </div>
+  </div>
+  <% end %>
+  </div>
+  </div>
   </div>
 </div>
