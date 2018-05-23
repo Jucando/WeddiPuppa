@@ -37,12 +37,9 @@ class PerformancesController < ApplicationController
   def destroy
     @performance = Performance.find(params[:id])
     @performance.destroy
+    authorize @performance
     # no need for app/views/performances/destroy.html.erb
     redirect_to performances_path
-  end
-
-  def book
-
   end
 
   private
@@ -50,7 +47,7 @@ class PerformancesController < ApplicationController
   def performance_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:performance).permit(:title, :description, :price, :is_visible, :category)
+    params.require(:performance).permit(:title, :description, :price, :is_visible, :category, :photo)
   end
 end
 
