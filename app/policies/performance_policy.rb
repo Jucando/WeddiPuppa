@@ -14,11 +14,11 @@ class PerformancePolicy < ApplicationPolicy
   end
 
   def update?
-  record.user == user  # Only performance creator can update it
+  record.user == current_user  # Only performance creator can update it
   end
 
   def destroy?
-  record.user == user  # Only performance creator can update it
+  record.user == current_user  # Only performance creator can update it
   end
 end
 
