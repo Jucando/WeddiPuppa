@@ -1,5 +1,5 @@
 <div class="banner">
-  <div class="home-banner">
+  <div class="home-banner" style="background-image: linear-gradient(225deg, rgba(159, 131, 106, 0.28) 0%, rgba(39, 36, 41, 0.32) 50%), url('<%= image_path "homepagecover.jpg" %>')">
     <h1>WeddiPuppa : Your party at home !</h1>
     <p>Find best performers for live show in your appartment</p>
     <%= link_to "Book a performance", performances_path, class: "btn btn-success" %>
@@ -15,7 +15,7 @@
 <% last_performances = @performances.last(3) %>
 <% last_performances.each do |performance| %>
   <div class="col-xs-12 col-sm-4">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url %>');">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url %>')">
       <div class="card-description">
         <h2><%= performance.title.capitalize %></h2>
       </div>
