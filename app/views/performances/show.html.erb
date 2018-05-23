@@ -1,32 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-offset-3 col-xs-6">
-      <div class="adv-card">
-        <div class="adv-card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @performance.smart_image_url %>')">
-        </div>
+<%= render 'shared/book_form' %>
 
-        <div class="adv-card-right">
-          <div class="adv-card-right-top">
-            <h1><%= @performance.title %></h1>
-            <h2><%= @performance.category %></h2>
-            <p><%= @performance.description %></p>
-          </div>
-          <div class="adv-card-right-bottom">
-            <p class="adv-card-price"><%= @performance.price %> €</p>
-            <%= link_to "BOOK NOW", new_performance_reservation_path(@performance), class: "btn btn-success" %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="btn-grp text-center">
-    <%= link_to "Back to performances", performances_path, class: "btn btn-info" %>
-    <% if policy(Performance).destroy? %>
-      <%= link_to "Edit", edit_performance_path(params[:id]), class: "btn btn-danger" %>
-      <%= link_to "Delete", performances_path(@performance), class: "btn btn-danger" %>
-    <% end %>
-  </div>
+<div class="btn-grp text-center">
+  <%= link_to "Back to performances", performances_path, class: "btn btn-info" %>
+  <% if policy(Performance).destroy? %>
+    <%= link_to "Edit", edit_performance_path(params[:id]), class: "btn btn-danger" %>
+    <%= link_to "Delete", performances_path(@performance), class: "btn btn-danger" %>
+  <% end %>
 </div>
+
 
 
