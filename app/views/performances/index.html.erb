@@ -3,12 +3,14 @@
   <div class="row">
     <% @performances.each do |performance| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url %>')">
+        <div class="card">
           <%= link_to "", performance_path(performance), class: "card-link" %>
-        </div>
-        <div class="card-subsection">
-          <h2><%= performance.title %></h2>
-          <span> <%= performance.price %> €</span>
+          <div class="card-upper-section" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url%>')">
+          </div>
+          <div class="card-sub-section">
+            <h2><%= performance.title.capitalize %></h2>
+            <span> <%= performance.price %> €</span>
+          </div>
         </div>
       </div>
     <% end %>
