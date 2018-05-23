@@ -7,7 +7,6 @@
     <%= f.input :date, label: "Event Date", as: :string, input_html: { class: "datepicker" } %>
     <%= f.input :location, label: "Event Location", placeholder: 'Example: 16 Villa Gaudelet, Paris', class: 'form-control' %>
   </div>
-
   <div class="adv-card-right-bottom">
     <p class="adv-card-price"><%= @performance.price %> €</p>
     <%= f.submit "CONFIRM", class: "btn btn-success" %>
