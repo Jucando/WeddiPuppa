@@ -4,6 +4,7 @@ class Performance < ApplicationRecord
   has_many :reservations, dependent: :nullify
   validates :category, inclusion: { in: ["Concert", "Danse", "Stand-up", "Painter", "DJ"] }
   validates :price, presence: true
+  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, presence: true
   validates :description, presence: true
   mount_uploader :photo, PhotoUploader
