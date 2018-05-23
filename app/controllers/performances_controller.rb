@@ -37,12 +37,9 @@ class PerformancesController < ApplicationController
   def destroy
     @performance = Performance.find(params[:id])
     @performance.destroy
+    authorize @performance
     # no need for app/views/performances/destroy.html.erb
     redirect_to performances_path
-  end
-
-  def book
-
   end
 
   private
