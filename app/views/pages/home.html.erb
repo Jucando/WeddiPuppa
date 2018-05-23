@@ -14,7 +14,7 @@
 <% last_performances = @performances.last(3) %>
 <% last_performances.each do |performance| %>
   <div class="col-xs-12 col-sm-4">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path performance.photo, height: 300, width: 400, crop: :fill %>');">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url %>');">
       <div class="card-description">
         <h2><%= performance.title.capitalize %></h2>
       </div>
