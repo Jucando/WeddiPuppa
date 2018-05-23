@@ -8,22 +8,24 @@
 
 <div class="container">
   <div class="row">
-
-<div class="container">
-  <div class="row">
-    <h2 class="text-center">Most recent performances</h2>
-<% last_performances = @performances.last(3) %>
-<% last_performances.each do |performance| %>
-  <div class="col-xs-12 col-sm-4">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url %>')">
-      <div class="card-description">
-        <h2><%= performance.title.capitalize %></h2>
+    <div class="container">
+      <div class="row">
+        <h2 class="text-center">Most recent performances</h2>
+        <% last_performances = @performances.last(3) %>
+        <% last_performances.each do |performance| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card">
+              <%= link_to "", performance_path(performance), class: "card-link" %>
+              <div class="card-upper-section" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url%>')">
+              </div>
+              <div class="card-sub-section">
+                <h2><%= performance.title.capitalize %></h2>
+                <span> <%= performance.price %> €</span>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <%= link_to "", performance_path(performance), class: "card-link" %>
     </div>
-  </div>
-  <% end %>
-  </div>
-  </div>
   </div>
 </div>
