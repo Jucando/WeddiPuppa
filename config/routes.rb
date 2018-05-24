@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
 
-  resources :reservations, only: [:index, :show]
+  resources :reservations, only: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
