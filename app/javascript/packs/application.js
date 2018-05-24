@@ -1,6 +1,4 @@
 import "bootstrap";
-import "plugins/flatpickr";
-import "components/testimonials";
+import "../plugins/flatpickr";
+import "../plugins/carousel";
 
-import { testimonials } from '../components/testimonials';
-testimonials();
