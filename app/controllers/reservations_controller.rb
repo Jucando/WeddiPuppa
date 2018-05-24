@@ -1,6 +1,8 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = policy_scope(Reservation.where(user_id: current_user.id))
+    skip_policy_scope
+    @reservations_as_client = current_user.reservations
+    @reservations_as_performer = current_user.reservations_as_performer
   end
 
   def show
