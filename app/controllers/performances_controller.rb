@@ -32,11 +32,14 @@ class PerformancesController < ApplicationController
 
   def edit
     @performance = Performance.find(params[:id])
+    authorize @performance
   end
 
   def update
     @performance = Performance.find(params[:id])
+    authorize @performance
     @performance.update(performance_params)
+    redirect_to performance_path(@performance)
   end
 
   def destroy
@@ -55,4 +58,18 @@ class PerformancesController < ApplicationController
     params.require(:performance).permit(:title, :description, :price, :is_visible, :category, :photo)
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

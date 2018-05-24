@@ -12,7 +12,10 @@
   </div>
 
   <div class="form-actions">
-
-  <%= f.submit "Add a performance", class: "btn btn-medium-pink"%>
+    <% if params[:action] == "edit" %>
+      <%= f.submit "Update performance", class: "btn btn-medium-pink"%>
+    <% else %>
+      <%= f.submit "Add a performance", class: "btn btn-medium-pink"%>
+    <% end %>
   </div>
 <% end %>
