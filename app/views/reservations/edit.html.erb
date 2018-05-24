@@ -6,6 +6,7 @@
   <!-- This will be shown when offer is accepted -->
   <p>Accepted!</p>
   <%= link_to 'cancel', reservation_path(@reservation, is_accepted: false), method: :patch%>
+  <!-- This will be shown when offer is declined -->
 <% elsif @reservation.is_accepted == false %>
   <p>Declined!</p>
 <% end %>
