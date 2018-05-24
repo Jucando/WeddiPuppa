@@ -1,9 +1,9 @@
 <%= render 'shared/book_form' %>
 
 <div class="btn-grp text-center">
-  <% if policy(Performance).destroy? %>
-    <%= link_to "Edit", edit_performance_path(params[:id]), class: "btn btn-medium-pink" %>
-    <%= link_to "Delete", performances_path(@performance), class: "btn btn-medium-pink" %>
+  <% if policy(@performance).destroy? %>
+    <%#= link_to "Edit", edit_performance_path(params[:id]), class: "btn btn-medium-pink" %>
+    <%= link_to "Delete", performance_path(@performance), method: :delete, class: "btn btn-medium-pink" %>
   <% end %>
 </div>
 
