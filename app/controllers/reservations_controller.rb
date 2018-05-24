@@ -1,8 +1,10 @@
 class ReservationsController < ApplicationController
   def index
-    skip_policy_scope
-    @reservations_as_client = current_user.reservations
-    @reservations_as_performer = current_user.reservations_as_performer
+    if params[:action] == "reservations_as_client"
+      reservation_as_client
+    else
+      reservation_as_performer
+    end
   end
 
   def show
@@ -60,6 +62,16 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def reservation_as_client
+    skip_policy_scope
+    @reservations_as_client = current_user.reservations
+  end
+
+  def reservation_as_performer
+    skip_policy_scope
+    @reservations_as_performer = current_user.reservations_as_performer
   end
 
   private
