@@ -20,7 +20,12 @@
             </div>
             <div class="adv-card-right-bottom">
               <p class="adv-card-price"><%= @performance.price %> €</p>
-              <%= link_to "BOOK NOW", new_performance_reservation_path(@performance), class: "btn btn-medium-blue" %>
+              <!-- a user should not be able to book his own card -->
+              <% if @performance.user != current_user %>
+                <%= link_to "BOOK NOW", new_performance_reservation_path(@performance), class: "btn btn-medium-blue" %>
+              <% else %>
+                <span>Can't book</span>
+              <% end %>
             </div>
         <% end %>
       </div>

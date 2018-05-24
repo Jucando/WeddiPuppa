@@ -8,6 +8,7 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new
     @performance = Performance.find(params[:performance_id])
+    @reservation.performance = @performance
     authorize @reservation
   end
 
