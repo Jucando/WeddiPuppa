@@ -6,3 +6,28 @@
   padding-top: 40vh;
   background-position: center;
 }
+.banner.body {
+  background-color: #2D245C;
+  height: 220px;
+  line-height: 220px;
+  text-align: center;
+  margin-top: 55px;
+  margin-bottom: 55px;
+}
+.banner h1 {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: white;
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+

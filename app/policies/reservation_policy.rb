@@ -6,7 +6,7 @@ class ReservationPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    record.performance.user != user
   end
 
   def update?

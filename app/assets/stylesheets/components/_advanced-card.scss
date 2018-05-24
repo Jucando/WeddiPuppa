@@ -13,23 +13,24 @@
 }
 
 .adv-card-on-top {
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 50vh;
+  background-size: cover;
+  min-height: 45vh;
   border-radius: 5px 5px 0 0;
+  background-position: center center;
 }
 
 .adv-card {
   display: flex;
   box-shadow: 1px 1px 30px #ccc;
   margin-bottom: 40px;
-  min-height: 50vh;
+  min-height: 55vh;
 }
 
 .adv-card-left {
   flex: 50%;
   background-size: cover;
   border-radius: 5px 0px 0px 5px;
+  background-position: center center;
 }
 
 .adv-card-right {

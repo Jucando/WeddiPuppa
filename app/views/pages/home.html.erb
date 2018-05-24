@@ -16,6 +16,7 @@
             <div class="card">
               <%= link_to "", performance_path(performance), class: "card-link" %>
               <div class="card-upper-section" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url%>')">
+                <p> <%= performance.category %></p>
               </div>
               <div class="card-sub-section">
                 <h2><%= performance.title.capitalize %></h2>
@@ -27,4 +28,13 @@
       </div>
     </div>
   </div>
+</div>
+<div class="banner body">
+  <h1 class="centered">Don't crash the party, BE the Party !</h1>
+</div>
+<div class="wrapper">
+  <%= render 'testimonials' %>
+</div>
+<div class="btn-centered">
+  <%= link_to "Book a performance", performances_path, class: "btn btn-medium-pink" %>
 </div>

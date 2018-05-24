@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   def index
+    @reservations = policy_scope(Reservation.where(user_id: current_user.id))
   end
 
   def show
@@ -8,14 +9,15 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new
     @performance = Performance.find(params[:performance_id])
+    @reservation.performance = @performance
     authorize @reservation
   end
 
   def create
     @reservation = Reservation.new(reservation_param)
     @performance = Performance.find(params[:performance_id])
-    authorize @reservation
     @reservation.performance = @performance
+    authorize @reservation
     @reservation.user = current_user
     if @reservation.save
       render :confirmation

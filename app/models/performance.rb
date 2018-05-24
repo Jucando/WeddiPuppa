@@ -14,7 +14,7 @@ class Performance < ApplicationRecord
     if photo.url.nil?
       "http://guitarhippies.com/wp-content/uploads/2017/11/jazz-guitar.jpg"
     else
-      cl_image_path self.photo, height: 300, width: 400, crop: :fill
+      cl_image_path self.photo, height: 300, width: 400, gravity: :auto, crop: :fill
     end
   end
 end

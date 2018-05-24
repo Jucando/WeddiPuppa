@@ -1,19 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <%= render 'shared/adv_card' %>
+      <%= render 'form' %>
     </div>
   </div>
 </div>
 
-<div class="btn-grp text-center">
-  <% if policy(@performance).edit? %>
-    <%= link_to "Edit", edit_performance_path(@performance), class: "btn btn-medium-pink" %>
-  <% end %>
+<div class="form-actions">
   <% if policy(@performance).destroy? %>
     <%= link_to "Delete", performance_path(@performance), method: :delete, class: "btn btn-medium-pink" %>
   <% end %>
 </div>
-
-
 

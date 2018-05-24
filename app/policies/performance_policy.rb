@@ -1,12 +1,14 @@
 class PerformancePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all #All users can see every perfomances
+      scope.all
+       #All users can see every perfomances
     end
 
-    def show?
-      true #All users can see every perfomance details
-    end
+  end
+
+  def show?
+    true #All users can see every perfomance details
   end
 
   def create?
@@ -14,11 +16,11 @@ class PerformancePolicy < ApplicationPolicy
   end
 
   def update?
-  record.user == current_user  # Only performance creator can update it
+    record.user == user  # Only performance creator can update it
   end
 
   def destroy?
-   # record.user == current_user  # Only performance creator can update it
+    record.user == user  # Only performance creator can destroy it
   end
 end
 
