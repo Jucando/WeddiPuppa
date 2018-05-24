@@ -17,5 +17,8 @@
     <% else %>
       <%= f.submit "Add a performance", class: "btn btn-medium-pink"%>
     <% end %>
+    <% if policy(@performance).destroy? %>
+      <%= link_to "Delete", performance_path(@performance), method: :delete, class: "btn btn-medium-pink" %>
+  <% end %>
   </div>
 <% end %>
