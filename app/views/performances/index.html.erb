@@ -1,4 +1,13 @@
 <div class="container">
+  <div class="search-form">
+    <%= form_tag performances_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "What are you looking for?"
+      %>
+    <% end %>
+  </div>
   <h1>Live an <strong>amazing</strong> experience</h1>
   <div class="row">
     <% @performances.each do |performance| %>

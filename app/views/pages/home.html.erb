@@ -11,8 +11,7 @@
     <div class="container">
       <div class="row">
         <h2 class="text-center">Most recent performances</h2>
-        <% last_performances = @performances.last(3) %>
-        <% last_performances.each do |performance| %>
+        <% @recent_performances.each do |performance| %>
           <div class="col-xs-12 col-sm-4">
             <div class="card">
               <%= link_to "", performance_path(performance), class: "card-link" %>
@@ -28,4 +27,13 @@
       </div>
     </div>
   </div>
+</div>
+<div class="banner body">
+  <h1 class="centered">Don't crash the party, BE the Party !</h1>
+</div>
+<div class="wrapper">
+  <%= render 'testimonials' %>
+</div>
+<div class="btn-centered">
+  <%= link_to "Book a performance", performances_path, class: "btn btn-medium-pink" %>
 </div>

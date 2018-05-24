@@ -6,7 +6,8 @@
     "bootstrap": "3",
     "flatpickr": "^4.5.0",
     "gmaps": "^0.4.24",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
