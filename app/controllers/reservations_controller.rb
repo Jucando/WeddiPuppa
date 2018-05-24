@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   def index
+    @reservations = policy_scope(Reservation.where(user_id: current_user.id))
   end
 
   def show
