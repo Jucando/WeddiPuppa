@@ -10,7 +10,6 @@ class PerformancesController < ApplicationController
     end
   end
 
-
   def show
     @performance = Performance.find(params[:id])
     authorize(@performance)
