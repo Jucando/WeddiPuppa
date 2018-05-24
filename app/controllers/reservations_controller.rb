@@ -28,6 +28,9 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(reservation_param)
+    authorize @reservation
   end
 
   def update
@@ -39,6 +42,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_param
-    params.require(:reservation).permit(:date, :location)
+    params.require(:reservation).permit(:date, :location, :is_accepted)
   end
 end
