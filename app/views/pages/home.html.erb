@@ -13,26 +13,23 @@
         <h2 class="text-center">Most recent performances</h2>
         <% last_performances = @performances.last(3) %>
         <% last_performances.each do |performance| %>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card">
-              <%= link_to "", performance_path(performance), class: "card-link" %>
-              <div class="card-upper-section" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url%>')">
-              </div>
-              <div class="card-sub-section">
-                <h2><%= performance.title.capitalize %></h2>
-                <span> <%= performance.price %> €</span>
-              </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <%= link_to "", performance_path(performance), class: "card-link" %>
+            <div class="card-upper-section" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url%>')">
+            </div>
+            <div class="card-sub-section">
+              <h2><%= performance.title.capitalize %></h2>
+              <span> <%= performance.price %> €</span>
             </div>
           </div>
+        </div>
         <% end %>
-      </div>
-    </div>
-    <div class="banner" style="background-color: rgba(0,101,168,0.6);">
-      <div class="banner-content">
-        <h1>Le Wagon Berlin</h1>
-        <p>Learn to code with us in Berlin</p>
-        <a class="btn btn-primary btn-lg">Start now</a>
       </div>
     </div>
   </div>
 </div>
+<div class="banner body">
+  <h1 class="centered">Don't crash the party, BE the Party !</h1>
+</div>
+<%= render 'testimonials' %>

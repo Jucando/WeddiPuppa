@@ -11,6 +11,7 @@ gem 'rails', '5.2.0'
 gem 'redis'
 gem 'pundit'
 gem 'geocoder'
+gem 'jquery-rails'
 
 
 gem 'autoprefixer-rails'

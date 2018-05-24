@@ -6,25 +6,28 @@
   padding-top: 40vh;
   background-position: center;
 }
-.banner {
-  color: white;
+.banner.body {
+  background-color: #2D245C;
+  height: 220px;
+  line-height: 220px;
   text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 55px;
+  margin-bottom: 55px;
 }
 .banner h1 {
+  color: white;
   font-size: 50px;
   font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 .banner p {
   font-size: 25px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: white;
   opacity: 0.6;
   margin-bottom: 30px;
 }
+
+
