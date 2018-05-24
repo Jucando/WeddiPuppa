@@ -15,8 +15,8 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_param)
     @performance = Performance.find(params[:performance_id])
-    authorize @reservation
     @reservation.performance = @performance
+    authorize @reservation
     @reservation.user = current_user
     if @reservation.save
       render :confirmation
