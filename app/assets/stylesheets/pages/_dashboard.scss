@@ -1,0 +1,31 @@
+.main-container {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+.left-nav {
+  flex: 0 0 15%;
+  background-color: blue;
+
+  .left-links {
+    margin: 40px;
+  }
+}
+
+.body-nav {
+  flex: 1 0 auto;
+  background-color: green;
+
+  .body-cards {
+        margin: 40px;
+  }
+}
+.right-nav {
+  flex: 0 0 25%;
+  background-color: blue;
+
+}
+
+a {
+  color: #2D245C;
+}

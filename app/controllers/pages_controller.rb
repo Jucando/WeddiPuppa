@@ -9,4 +9,8 @@ class PagesController < ApplicationController
   def last_performances(number)
     @results = @performances.last(number)
   end
+
+  def show
+    render template: "pages/#{params[:page]}"
+  end
 end
