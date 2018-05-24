@@ -8,4 +8,16 @@ class ReservationPolicy < ApplicationPolicy
   def create?
     record.performance.user != user
   end
+
+  def update?
+    record.user == user
+  end
+
+  def edit_pending?
+    update_pending?
+  end
+
+  def update_pending?
+    record.performance.user == user
+  end
 end
