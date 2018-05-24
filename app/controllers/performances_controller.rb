@@ -2,8 +2,14 @@ class PerformancesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @performances = policy_scope(Performance)
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR category ILIKE :query OR description ILIKE :query"
+      @performances = policy_scope(Performance.where(sql_query, query: "%#{params[:query]}%"))
+    else
+      @performances = policy_scope(Performance)
+    end
   end
+
 
   def show
     @performance = Performance.find(params[:id])
