@@ -10,5 +10,14 @@ class ReservationPolicy < ApplicationPolicy
   end
 
   def update?
+    record.user == user
+  end
+
+  def edit_pending?
+    update_pending?
+  end
+
+  def update_pending?
+    record.performance.user == user
   end
 end

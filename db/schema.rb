@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2018_05_24_112421) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.boolean "is_accepted", default: false
+    t.boolean "is_accepted"
     t.index ["performance_id"], name: "index_reservations_on_performance_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
