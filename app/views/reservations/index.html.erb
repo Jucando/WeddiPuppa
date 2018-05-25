@@ -1,14 +1,3 @@
 <h1>Your Reservations</h1>
-<div class="container">
-  <div class="row">
-    <% @reservations.each do |reservation| %>
-      <div class="col-xs-12 confirmation">
-        <h2><%= reservation.performance.title %></h2>
-        <p class="confirmation-body">Details: <%= reservation.performance.description %></p>
-        <p>Date : <%= reservation.date %></p>
-        <p>The Artist: <%= User.find(reservation.performance.user_id).email %></p>
-        <p>Price: <%= reservation.performance.price %></p> <br>
-      </div>
-    <% end %>
-  </div>
-</div>
+
+<%= render "shared/dashboard-links" %>
