@@ -1,7 +1,7 @@
 class Performance < ApplicationRecord
   belongs_to :user
   has_many :media, dependent: :nullify
-  has_many :reservations, dependent: :nullify
+  has_many :reservations, dependent: :destroy
   validates :category, inclusion: { in: ["Concert", "Danse", "Stand-up", "Painter", "DJ"] }
   validates :price, presence: true
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
