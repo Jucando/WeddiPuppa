@@ -3,5 +3,6 @@ import 'flatpickr/dist/themes/airbnb.css'
 
 flatpickr(".datepicker", {
   altInput: true,
-  enableTime: true
+  enableTime: true,
+  minDate: "today"
 });
