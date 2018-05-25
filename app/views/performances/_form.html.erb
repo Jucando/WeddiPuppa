@@ -1,4 +1,4 @@
-<%= simple_form_for(@performance) do |f| %>
+<%= simple_form_for(@performance, html: { enctype: "multipart/form-data" }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -10,8 +10,8 @@
     <%#= f.input :photo %>
     <div class="form-group file optional performance_photo">
       <label class="file optional">Photo</label>
-      <label class="box-select" for="performance_photo"><i class="fas fa-plus"></i></label>
-      <input class="hidden" type="file" name="performance[photo]" id="performance_photo">
+      <label class="box-select file optional" for="performance_photo"><i class="fas fa-plus"></i></label>
+      <input class="hidden form-control-file file optional" type="file" name="performance[photo]" id="performance_photo">
     </div>
 
     <%= f.input :photo_cache, as: :hidden %>
