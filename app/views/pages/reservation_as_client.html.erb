@@ -1,8 +1,8 @@
-<%= render "shared/dashboard-links" %>
+<%= render 'pages/dashboard-left-nav-bar' %>
 
-<div class="container" style="background-color: #5fb8b7; color: white">
+<div class="container" style="background-color: #bf8367; color: white">
   <div class="row">
-    <% @reservations_as_performer.each do |reservation| %>
+    <% @reservations_as_client.each do |reservation| %>
       <div class="col-xs-12 confirmation">
         <h3><%= reservation.performance.title %></h3>
         <p class="confirmation-body">Details: <%= reservation.performance.description %></p>
@@ -13,3 +13,5 @@
     <% end %>
   </div>
 </div>
+
+
