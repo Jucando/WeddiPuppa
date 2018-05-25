@@ -47,7 +47,7 @@
           </li>
         <li>
           <% if user_signed_in? %>
-          <%= link_to reservations_path  do %>
+          <%= link_to dashboard_path  do %>
             <%= t(".dashboard", default: "Dashboard") %>
           <% end %>
             <%= link_to edit_user_registration_path do %>
