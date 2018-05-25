@@ -1,0 +1,24 @@
+<div class="main-container">
+  <%= render 'pages/dashboard-left-nav-bar' %>
+
+  <div class="body-nav">
+    <div class="body-cards">
+      <div class="body-card">
+        <div class="section">
+          <h1>Bookings</h1>
+        </div>
+        <%= render 'reservations/index', reservations: @reservations %>
+      </div>
+    </div>
+  </div>
+  <div class="right-nav">
+    <div class="right-cards">
+      <div class="right-card">
+        <div class="section">
+          <h1>Performances</h1>
+        </div>
+        <div><%= render 'reservations/index', reservations: @reservations %></div>
+      </div>
+    </div>
+  </div>
+</div>

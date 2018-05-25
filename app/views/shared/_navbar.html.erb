@@ -11,20 +11,15 @@
 
       <!-- Links when logged in -->
       <%= link_to "Add a performance", new_performance_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Dashboard", reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag "https://pbs.twimg.com/profile_images/870505114418659329/9akj9LFI_400x400.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
               <% end %>
             </li>
             <li>
@@ -37,7 +32,6 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to "Performances", performances_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Add a performance", new_performance_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
@@ -53,8 +47,14 @@
           </li>
         <li>
           <% if user_signed_in? %>
-            <%= link_to "#" do %>
+          <%= link_to dashboard_path  do %>
+            <%= t(".dashboard", default: "Dashboard") %>
+          <% end %>
+            <%= link_to edit_user_registration_path do %>
               <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <% end %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
             <% end %>
           <% else %>
             <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
