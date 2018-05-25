@@ -1,54 +1,153 @@
-.cards {
 
-}
+// Main container
 .main-container {
-  display: flex;
-  height: calc(100vh - 70px);
-}
-
-.left-nav {
-  flex: 0 0 15%;
-  background-color: blue;
-  float: left;
-  display: table-column;
-  position: relative;
+  display: table;
+  width: 100%;
+  max-width: 1440px;
   min-height: 100vh;
-  height: 730px;
-  position: sticky;
-  width: 97px;
-
-  .left-links {
-    margin: 40px;
-  }
+  position: relative;
+  margin: 0 auto;
+  background: rgba(243,224,240,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(243,224,240,1) 0%, rgba(243,224,240,0) 80%);
 }
 
-.body-nav {
-  flex: 1 0 auto;
-  background-color: green;
-  width: 62%;
-
-
-  .body-cards {
-    margin: 40px;
-    width: 62%;
-
-  }
-}
-.right-nav {
-  flex: 0 0 25%;
-  background-color: blue;
-
+// global layout
+.main-container > .left-nav, .body-nav, .right-nav {
+    float: left;
+    display: table-column;
+    position: relative;
+    min-height: 100vh;
+    height: 730px;
 }
 
 a {
   color: #2D245C;
 }
 
-.txt .scrollbar .block {
+div {
+  display: block;
+}
+
+.section {
+    height: 72px;
+    float: left;
+    width: 100%;
+    margin-top: 21px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+}
+
+// Left nav
+.left-nav {
+    float: left;
+    width: 18%;
+    width: 160px;
+    border-right: 1px solid #cbc9f6;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    -webkit-transition: left 1s;
+    transition: left 1s;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+
+  .left-links {
+    margin: 40px;
+  }
+}
+
+// Right nav
+.right-nav {
+  width: 25%;
+  min-width: 173px;
+}
+
+.right-nav .scrollbar .block {
     padding: 16px 32px;
     margin-bottom: 16px;
     float: left;
     width: 100%;
     border-radius: 16px;
-    background: rgba(255, 255, 255, .72);
+}
+
+.right-nav .scrollbar .block h2 {
+    margin: 0;
+    line-height: 16px;
+    padding: 8px 0;
+}
+.right-nav h2 {
+    float: left;
+    width: 100%;
+    height: 72px;
+    color: #4c5f99;
+    margin-top: 21px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+// Body nav --------------------------------------------------------------------
+.body-nav {
+  width: 62%;
+  padding: 0 0 0 35px;
+}
+
+.body-nav .scrollbar {
+  padding-left: 30px;
+}
+.body-nav .scrollbar .block {
+    padding: 16px 32px;
+    margin-bottom: 16px;
+    float: left;
+    width: 100%;
+    border-radius: 16px;
+}
+.body-nav .scrollbar .block .info {
+  padding-left: 96px;
+}
+.body-nav .scrollbar .block .info .top {
+  float: left;
+  width: 100%;
+}
+.body-nav .scrollbar .block .info .text {
+  float: left;
+  width: 100%;
+  font-size: 13px;
+  color: #4c61a2;
+}
+.body-nav .scrollbar .block .info .price {
+  float: right;
+  width: 80px;
+  text-align: right;
+  color: #495f9f;
+  font-weight: 600;
+  font-size: 13px;
+}
+.body-nav .scrollbar .block .info .date {
+  color: #9eaacc;
+  font-size: 11px;
+  font-weight: 500;
+  float: left;
+  padding-left: 21px;
+  padding-right: 90px;
+}
+
+// Scrollbar -------------------------------------------------------------------
+.scrollbar {
+  height: 535px;
+  float: left;
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
+  padding-right: 26px;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 2px;
+    background: none;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #f8f7fb;
+    opacity: .4;
 }

@@ -1,14 +1,25 @@
-<h1>Your Reservations</h1>
-<div class="container">
+<div class="scrollbar" style="height: 535px;">
   <div class="row">
-    <% reservations.each do |reservation| %>
-      <div >
-        <h2><%= reservation.performance.title %></h2>
-        <p>Details: <%= reservation.performance.description %></p>
-        <p>Date : <%= reservation.date %></p>
-        <p>The Artist: <%= User.find(reservation.performance.user_id).email %></p>
-        <p>Price: <%= reservation.performance.price %></p> <br>
-      </div>
-    <% end %>
+    <div class="block">
+      <% reservations.each do |reservation| %>
+        <div class="info">
+          <div class="top">
+            <h2><%= reservation.performance.title %></h2>
+          </div>
+          <div class="rating">
+            <%= User.find(reservation.performance.user_id).email %>
+          </div>
+          <div class="date">
+            <%= reservation.date %>
+          </div>
+          <div class="price">
+            <%= reservation.performance.price %>
+          </div>
+          <div class="text">
+            <%= reservation.performance.description %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

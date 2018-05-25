@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Live an <strong>amazing</strong> experience</h1>
+  <div class="search-form">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= form_tag performances_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "What are you looking for?"%>
+        <% end %>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <% performances.each do |performance| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <%= link_to "", performance_path(performance), class: "card-link" %>
+          <div class="card-upper-section" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= performance.smart_image_url%>')">
+            <p> <%= performance.category %></p>
+          </div>
+          <div class="card-sub-section">
+            <h2><%= performance.title.capitalize %></h2>
+            <span> <%= performance.price %> €</span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
