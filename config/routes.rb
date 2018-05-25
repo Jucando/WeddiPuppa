@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :performances do
     resources :reservations, only: [:new, :create]
   end
-  resources :reservations, only: [:index]
+
+  resources :reservations, only: [:index, :edit, :update]
 end

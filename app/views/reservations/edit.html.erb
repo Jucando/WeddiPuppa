@@ -1,0 +1,14 @@
+<!-- This will be shown when not offer is not accepted yet -->
+<% if @reservation.is_accepted.nil? %>
+  <%= link_to 'ACCEPT', reservation_path(@reservation, is_accepted: true), method: :patch, class: "btn btn-success" %>
+  <%= link_to 'DECLINE', reservation_path(@reservation, is_accepted: false), method: :patch,  class: "btn btn-danger" %>
+<% elsif @reservation.is_accepted == true %>
+  <!-- This will be shown when offer is accepted -->
+  <p>Accepted!</p>
+  <%= link_to 'cancel', reservation_path(@reservation, is_accepted: false), method: :patch%>
+  <!-- This will be shown when offer is declined -->
+<% elsif @reservation.is_accepted == false %>
+  <p>Declined!</p>
+<% end %>
+
+<h1>current status : <%= @reservation.is_accepted %> </h1>
