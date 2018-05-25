@@ -2,35 +2,36 @@
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h1 class="text-center">Thanks for your reservation!</h1>
-<p class="text-center"><i class="fa fa-check-circle" id="confirmation-fa"></i></p>
-<p>📩 Check your inbox, you will receive a confirmation when the Puppa validates your reservation.</p>
-  <div class=adv-main-card>
-    <!-- If small screen we put image on top -->
-    <div class="adv-card-on-top hidden-md hidden-lg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @performance.smart_image_url %>')">
-    </div>
-    <!-- else we do the normal adv card -->
-    <div class="adv-card">
-      <div class="adv-card-left hidden-xs hidden-sm" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @performance.smart_image_url %>')">
-      </div>
-      <div class="adv-card-right">
-        <div class="adv-card-right-top">
-          <div class="advanced-card-right-top-title">
-            <h1><%= @performance.title %></h1>
+      <p class="text-center"><i class="fa fa-check-circle" id="confirmation-fa"></i></p>
+      <p class="text-center">📩 You will receive an inbox confirmation when the Puppa validates your reservation.</p>
+        <div class=adv-main-card>
+          <!-- If small screen we put image on top -->
+          <div class="adv-card-on-top hidden-md hidden-lg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @performance.smart_image_url %>')">
           </div>
-          <h2><%= @performance.category %></h2>
-          <p><%= @performance.description %></p>
-          <p><%= @reservation.location %> </p>
-          <p><%= @reservation.date.strftime('%e %b %Y %H:%M') %> </p>
-        </div>
-        <div class="adv-card-right-bottom">
-          <p class="adv-card-price"><%= @performance.price %> €</p>
+          <!-- else we do the normal adv card -->
+          <div class="adv-card">
+            <div class="adv-card-left hidden-xs hidden-sm" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @performance.smart_image_url %>')">
+            </div>
+            <div class="adv-card-right">
+              <div class="adv-card-right-top">
+                <div class="advanced-card-right-top-title">
+                  <h1><%= @performance.title %></h1>
+                </div>
+                <h2><%= @performance.category %></h2>
+                <p><%= @performance.description %></p>
+                <p><%= @reservation.location %> </p>
+                <p><%= @reservation.date.strftime('%e %b %Y %H:%M') %> </p>
+              </div>
+              <div class="adv-card-right-bottom">
+                <p class="adv-card-price"><%= @performance.price %> €</p>
+              </div>
+            </div>
+          </div>
+          <div id="button-dashboard">
+            <%= link_to "Go to dashboard", reservations_path, class: "btn btn-medium-blue" %>
+          </div>
         </div>
       </div>
-    </div>
-    <%= link_to "Back to performances", performances_path, class:'show-backlink' %>
-  </div>
-</div>
-
     </div>
   </div>
 </div>
