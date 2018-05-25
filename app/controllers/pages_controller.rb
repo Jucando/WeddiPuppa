@@ -6,6 +6,10 @@ class PagesController < ApplicationController
     @recent_performances = last_performances(6)
   end
 
+  def dashboard
+    @reservations = current_user.reservations
+  end
+
   def last_performances(number)
     @results = @performances.last(number)
   end

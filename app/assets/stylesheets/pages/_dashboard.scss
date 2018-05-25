@@ -1,3 +1,6 @@
+.cards {
+
+}
 .main-container {
   display: flex;
   height: calc(100vh - 70px);
@@ -6,6 +9,13 @@
 .left-nav {
   flex: 0 0 15%;
   background-color: blue;
+  float: left;
+  display: table-column;
+  position: relative;
+  min-height: 100vh;
+  height: 730px;
+  position: sticky;
+  width: 97px;
 
   .left-links {
     margin: 40px;
@@ -15,9 +25,13 @@
 .body-nav {
   flex: 1 0 auto;
   background-color: green;
+  width: 62%;
+
 
   .body-cards {
-        margin: 40px;
+    margin: 40px;
+    width: 62%;
+
   }
 }
 .right-nav {
@@ -28,4 +42,13 @@
 
 a {
   color: #2D245C;
+}
+
+.txt .scrollbar .block {
+    padding: 16px 32px;
+    margin-bottom: 16px;
+    float: left;
+    width: 100%;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .72);
 }
