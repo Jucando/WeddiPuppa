@@ -29,6 +29,8 @@
         <% end %>
       </div>
     </div>
-    <%= link_to "Back to performances", performances_path, class:'show-backlink' %>
+    <% if @performance.user != current_user %>
+      <%= link_to "Back to performances", performances_path, class:'show-backlink' %>
+    <% end %>
   </div>
 </div>
