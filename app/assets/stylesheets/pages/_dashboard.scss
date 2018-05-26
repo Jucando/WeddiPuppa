@@ -54,7 +54,21 @@ div {
     transition: opacity 1s;
 
   .left-links {
-    margin: 40px;
+    margin: 30px 10px 6px 18px;
+    font-weight: lighter;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      font-weight: bolder;
+      color: black;
+    }
+  }
+
+  .active {
+    font-weight: bolder;
   }
 }
 

@@ -6,15 +6,15 @@
   </div>
 </div>
 
-<div class="btn-grp text-center">
+<div class="btn-grp text-center" >
   <% if policy(@performance).edit? %>
     <%= link_to "Edit", edit_performance_path(@performance), class: "btn btn-medium-pink" %>
   <% end %>
   <% if policy(@performance).destroy? %>
     <%= link_to "Delete", performance_path(@performance), method: :delete, class: "btn btn-medium-pink" %>
-  <% end %>
+  <% end %> <br>
   <% if policy(@performance).my_performances? %>
-    <%= link_to "Back to my perfromances", my_performances_path, class: "btn btn-medium-white"  %>
+    <%= link_to "Back to my perfromances", my_performances_path, class: "btn btn-medium-white button-performance-show"  %>
   <% end %>
 </div>
 
