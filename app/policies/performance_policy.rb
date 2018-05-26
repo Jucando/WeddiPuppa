@@ -22,6 +22,10 @@ class PerformancePolicy < ApplicationPolicy
   def destroy?
     record.user == user  # Only performance creator can destroy it
   end
+
+  def my_performances?
+    record.user == user  # Only performance creator can see it's own perfromances
+  end
 end
 
 

@@ -1,5 +1,6 @@
 
-// Main container
+/*Main container --------------------------------------------------------------------*/
+
 .main-container {
   display: table;
   width: 100%;
@@ -10,7 +11,8 @@
   background-color: rgb(244, 244, 244) !important;
 }
 
-// global layout
+/*global layout --------------------------------------------------------------------*/
+
 .main-container > .left-nav, .body-nav, .right-nav {
     float: left;
     display: table-column;
@@ -36,11 +38,12 @@ div {
     padding-left: 30px;
 }
 
-// Left nav
+/*Left nav --------------------------------------------------------------------*/
+
 .left-nav {
     float: left;
     width: 18%;
-    width: 160px;
+    width: 190px;
     border-right: 1px solid #cbc9f6;
     height: 100%;
     position: relative;
@@ -55,7 +58,8 @@ div {
   }
 }
 
-// Right nav
+/*Right nav --------------------------------------------------------------------*/
+
 .right-nav {
   width: 25%;
   min-width: 173px;
@@ -85,9 +89,10 @@ div {
     line-height: 32px;
 }
 
-// Body nav --------------------------------------------------------------------
+/*Body nav --------------------------------------------------------------------*/
+
 .body-nav {
-  width: 62%;
+  width: 75%;
   padding: 0 0 0 35px;
 }
 
@@ -112,13 +117,13 @@ div {
   float: left;
   width: 100%;
   font-size: 13px;
-  color: #4c61a2;
+  color: white;
 }
 .body-nav .scrollbar .block .info .price {
   float: right;
   width: 80px;
   text-align: right;
-  color: #495f9f;
+  color: white;
   font-weight: 600;
   font-size: 13px;
 }
@@ -127,13 +132,13 @@ div {
   font-size: 11px;
   font-weight: 500;
   float: left;
-  padding-left: 21px;
+  padding-left: 0px;
   padding-right: 90px;
 }
 
 // Scrollbar -------------------------------------------------------------------
 .scrollbar {
-  height: 535px;
+  height: 80%;
   float: left;
   width: 100%;
   overflow-y: scroll;

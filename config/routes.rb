@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     get "dashboard", to: "pages#dashboard"
     get "dashboard/my_reservations", to: 'pages#reservation_as_client', as: "my_reservations"
     get "dashboard/my_reservations_requests", to: 'pages#reservation_as_performer', as: "my_reservations_requests"
+    get "dashboard/my_performances", to: 'pages#my_performances', as: "my_performances"
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

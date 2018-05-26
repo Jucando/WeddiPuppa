@@ -24,7 +24,7 @@ div {
 
 .block .info .top h2 {
     padding-top: 6px;
-    color: #4c5f99;
+    color: white;
     font-size: 24px;
     font-weight: 500;
     line-height: 18px;
@@ -40,3 +40,9 @@ div {
     padding-left: 35px;
 }
 
+.performance-image {
+    height: 108px;
+    width: 180px;
+    background-size: contain;
+    top: 0px;
+}

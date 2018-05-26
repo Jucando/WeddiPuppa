@@ -13,6 +13,9 @@
   <% if policy(@performance).destroy? %>
     <%= link_to "Delete", performance_path(@performance), method: :delete, class: "btn btn-medium-pink" %>
   <% end %>
+  <% if policy(@performance).my_performances? %>
+    <%= link_to "Back to my perfromances", my_performances_path, class: "btn btn-medium-white"  %>
+  <% end %>
 </div>
 
 
