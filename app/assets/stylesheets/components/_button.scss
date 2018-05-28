@@ -47,3 +47,14 @@
     text-align: center;
     margin: 69px;
 }
+
+.dashboard-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    margin-top: 15px;
+    margin-right: 40px;
+  }
+}

@@ -50,6 +50,12 @@ class PerformancesController < ApplicationController
     redirect_to performances_path
   end
 
+  def my_performances
+    @my_performance = Performance.find(params[:id])
+    authorize @performance
+    redirect_to my_performances
+  end
+
   private
 
   def performance_params

@@ -23,12 +23,14 @@ class PagesController < ApplicationController
   end
 
   def reservation_as_client
-    skip_policy_scope
     @reservations_as_client = current_user.reservations
   end
 
   def reservation_as_performer
-    skip_policy_scope
     @reservations_as_performer = current_user.reservations_as_performer
+  end
+
+  def my_performances
+    @performances = current_user.performances
   end
 end
