@@ -43,6 +43,9 @@
                   <div class="text">
                     <%= reservation.performance.description %>
                   </div>
+                  <div class="accept">*
+                    <%= render 'reservations/edit', reservation: reservation %>
+                  </div>
                 </div>
               <% end %>
             </div>

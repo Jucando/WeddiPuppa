@@ -48,7 +48,7 @@ class ReservationsController < ApplicationController
       authorize @reservation, :update_pending?
       @reservation.is_accepted = params[:is_accepted]
       @reservation.save
-      render 'edit'
+      redirect_to my_reservations_requests_path
     elsif @reservation.user == current_user
       # CAN BE IMPLEMENTED : If the current user is the user who created the reservation, he can edit other reservation infos
       # authorize @reservation
